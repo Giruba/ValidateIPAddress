@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace ValidateAGivenIPAddress
 {
@@ -6,7 +7,20 @@ namespace ValidateAGivenIPAddress
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Validate IP address!");
+            Console.WriteLine("--------------------");
+
+            Console.WriteLine("Enter the IP v4 address");
+            try
+            {
+                string IPV4address = Console.ReadLine();
+                StringManipulator.ValidateIPV4Address(IPV4address);
+            }
+            catch (Exception exception) {
+                Console.WriteLine("Exception is"+exception.Message);
+            }
+
+            Console.ReadLine();
         }
     }
 }
